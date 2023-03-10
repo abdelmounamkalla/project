@@ -10,6 +10,7 @@ import generalRoutes from "./routes/general.js"
 
 // data imports
 import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
 /* CONFIGURATION */
 dotenv.config();
 const app = express();
@@ -20,6 +21,7 @@ app.use(morgan("common"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));//for post req c4a
 
 /* ROUTES */
 app.use("/client", clientRoutes);
@@ -37,3 +39,4 @@ mongoose
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
   })
   .catch((error) => console.log(`${error} did not connect`));
+  

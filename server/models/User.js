@@ -18,7 +18,7 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
       min: 8,
-      max:24,
+      max:32,
     },
     city: String,
     phoneNumber: String,
