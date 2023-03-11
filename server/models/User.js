@@ -22,7 +22,13 @@ const UserSchema = new mongoose.Schema(
     },
     city: String,
     phoneNumber: String,
-    rents: Array,
+    rents:[
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        unique: true,
+        ref: 'Rent',
+      }
+    ],
     credit:Number,
   },
   { timestamps: true }
